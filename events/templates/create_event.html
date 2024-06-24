@@ -1,0 +1,25 @@
+<!-- chat/events/templates/create_event.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Novo Evento</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'create_event.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Novo Evento</h1>
+        <div class="form-content">
+            <img src="{% static 'narutin.jpg' %}" alt="Imagem de exemplo">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Salvar Evento</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* chat/meuprojeto/static/event_list.css */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:hover {
+    background-color: #f3f3f3;
+}
+
+form, a {
+    margin-left: 10px;
+}
+
+form button {
+    text-decoration: none;
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #6b63fff1;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background-color: #6b63fff1;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-group .btn {
+    margin-right: 10px;
+}

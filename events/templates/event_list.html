@@ -1,0 +1,48 @@
+<!-- chat/events/templates/event_list.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Eventos</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'event_list.css' %}">
+</head>
+<body>
+    <h1>Lista de Eventos</h1>
+
+    <!-- Botões agrupados -->
+    <div class="btn-group">
+        <!-- Botão para CHAT -->
+        <a href="http://127.0.0.1:8000/" class="btn" target="_blank">CHAT</a>
+
+        <!-- Botão para logout -->
+        <form action="{% url 'logout' %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+
+    <!-- Lista de eventos -->
+    <ul>
+        {% for event in events %}
+        <li>
+            {{ event.title }} - {{ event.date }}
+
+            <!-- Formulário para deletar o evento -->
+            <form action="{% url 'delete_event' event.id %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit">Deletar</button>
+            </form>
+
+            <!-- Link para atualizar o evento -->
+            <a href="{% url 'update_event' event.id %}">Atualizar</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Link para criar um novo evento -->
+    <a href="{% url 'create_event' %}">Criar Novo Evento</a>
+</body>
+</html>

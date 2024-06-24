@@ -1,0 +1,26 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Evento</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'update_event.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Atualizar Evento</h1>
+        <div class="form-content">
+            <img src="{% static 'cadas.jpg' %}" alt="Imagem de Exemplo" class="event-image">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Atualizar Evento</button>
+            </form>
+            <a href="{% url 'evento_list' %}" class="cancel-link">Cancelar e Voltar para Lista de Eventos</a>
+        </div>
+    </div>
+</body>
+</html>
